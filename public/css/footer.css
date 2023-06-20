@@ -1,0 +1,32 @@
+.div-red{
+    background-color:#cc4f34;
+    height:40px;
+    width:100%;
+}
+.all-in{
+    display: block;
+    background-color: black;
+    color: white;
+}
+.div-more, .div-cpr, .div-about{
+    display: flex;
+    justify-content:center;
+    gap:30px;
+}
+.div-about{
+    margin-top:5%;
+}
+.logo{
+    font-size: 50px;
+    text-decoration:none;
+}
+.logo:hover{
+    border-radius:15px;
+    text-decoration:none;
+}
+p{
+    justify-content:center;
+    align-items:center;
+    font-size: 50px;
+    font-family: "Roboto", sans-serif;
+}

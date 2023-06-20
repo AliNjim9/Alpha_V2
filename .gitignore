@@ -1,0 +1,19 @@
+# Laravel specific files/directories
+.env
+vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel package specific files/directories
+/packages/
+/packages/*/.env
+/packages/*/vendor/
+/packages/*/node_modules/
+/packages/*/.phpunit.result.cache
+
+# Homestead/Valet specific files/directories
+Homestead.json
+Homestead.yaml
+Homestead.yml
+Valet/

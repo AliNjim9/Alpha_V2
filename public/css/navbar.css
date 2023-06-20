@@ -1,0 +1,116 @@
+#myCarousel
+{
+    z-index: 1;
+}
+.navbar {
+    z-index: 2;
+    position : fixed;
+    align-items : center;
+    display : flex!important;
+    width: 100%;
+    justify-content : center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    opacity : 0.8;
+    border-radius:10px;
+}
+.navbar-toggler {
+    display: none;
+}
+.navbar-brand {
+    font-weight: bold;
+    width : 30px;
+    margin-right: 5%;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap : 30px;
+}
+
+.nav-item {
+    margin-right: 10px;
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease;
+}
+.nav-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    text-decoration: none;
+}
+.nav-link{
+    padding-left: 5px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #000000;
+    display: 1 flex;
+    text-decoration: none;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust this value to control the distance between the text and underline */
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out; /* Adjust the transition duration as needed */
+}
+.nav-link:hover{
+    text-decoration: none;
+}
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 1300px) {
+    .navbar {
+        flex-direction: column;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        justify-content : left;
+    }
+
+    .navbar-toggler {
+        display: block;
+        position: absolute;
+        top: 28px;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navbar-brand {
+        margin-bottom: 2vh;
+    }
+
+    .navbar-nav {
+        display: none;
+        gap : 3px;
+    }
+
+    .navbar.show .navbar-nav {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-item {
+        margin-bottom: 10px;
+        text-align:left;
+    }
+    .nav-link{
+        display: block;
+        width: 100%;
+        font-size: 3vh;
+    }
+}

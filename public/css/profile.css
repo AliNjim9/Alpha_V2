@@ -1,0 +1,41 @@
+.divided-div{
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+    display: flex;
+    width: 100%;
+}
+.left-div {
+    margin-left: 1%;
+    width: 20%;
+    float: left;
+    border-right: 1px solid #e0e6ef;
+}
+.right-div {
+    margin-right: 1%;
+    width: 80%;
+    float: left;
+}
+.links-div{
+    position: none;
+}
+.links-div-1{
+    border-bottom: 1px solid #e0e6ef;
+    position: relative;
+}
+.links-div a{
+    display: inline-block;
+    margin-left: 8%;
+}
+.titled-div{
+    background-color: antiquewhite;
+    border-radius: 8%;
+    text-align: center;
+}
+.forms-div{
+    padding-left:2%;
+}
+
+.collapse a{
+    border-bottom: none;
+}
