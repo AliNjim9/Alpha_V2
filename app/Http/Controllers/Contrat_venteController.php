@@ -78,7 +78,12 @@ class Contrat_venteController extends Controller
     public function afficher_mes_contrats_ventes()
     {
         $userId=Auth::id();
-        $user = User::find($userId);
+        $user = User::find($userId);/*
+        $acheteurContrats = $user->contratsAsAcheteur;
+        $vendeurContrats = $user->contratsAsVendeur;
+        echo($acheteurContrats)."<br>";
+        echo($vendeurContrats);*/
+        
         $contrats_ventes=Contrat_vente::
         where('vendeur_id',$userId)
         ->get();
@@ -86,15 +91,15 @@ class Contrat_venteController extends Controller
         foreach($contrats_ventes as $contrat_vente){
             switch($contrat_vente->type_vente){
                 case("terrain"):
-                    $details=Terrain::findOrFail($contrat_vente->vente_id);
+                    $details=Terrain::findOrFail($contrat_vente->vente_id_terrain);
                     array_push($vente_details,$details);
                     break;
                 case("residence"):
-                    $details=Residence::findOrFail($contrat_vente->vente_id);
+                    $details=Residence::findOrFail($contrat_vente->vente_id_residence);
                     array_push($vente_details,$details);
                     break;
                 case("appartement"):
-                    $details=Appartement::findOrFail($contrat_vente->vente_id);
+                    $details=Appartement::findOrFail($contrat_vente->vente_id_appartement);
                     array_push($vente_details,$details);
                     break;
             }
@@ -112,15 +117,15 @@ class Contrat_venteController extends Controller
         foreach($contrats_ventes as $contrat_vente){
             switch($contrat_vente->type_vente){
                 case("terrain"):
-                    $details=Terrain::findOrFail($contrat_vente->vente_id);
+                    $details=Terrain::findOrFail($contrat_vente->vente_id_terrain);
                     array_push($vente_details,$details);
                     break;
                 case("residence"):
-                    $details=Residence::findOrFail($contrat_vente->vente_id);
+                    $details=Residence::findOrFail($contrat_vente->vente_id_residence);
                     array_push($vente_details,$details);
                     break;
                 case("appartement"):
-                    $details=Appartement::findOrFail($contrat_vente->vente_id);
+                    $details=Appartement::findOrFail($contrat_vente->vente_id_appartement);
                     array_push($vente_details,$details);
                     break;
             }

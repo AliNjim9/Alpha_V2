@@ -71,8 +71,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Appartment::class,'proprietaire');
     }
-    public function Contrats()
+    public function contratsAsAcheteur()
     {
-        return $this->hasMany(Contrat::class);
+        return $this->hasMany(Contrat_vente::class, 'acheteur_id');
+    }
+
+    public function contratsAsVendeur()
+    {
+        return $this->hasMany(Contrat_vente::class, 'vendeur_id');
     }
 }

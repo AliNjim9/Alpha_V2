@@ -98,7 +98,7 @@
                 </div>-->
                 <div class="" style="height:30px;margin-top:2%;"></div>
             </div>
-            <div class="right-div">          
+            <div class="right-div">
                 <h1>Mes Contrats Vente/Achats Details</h1>
                 <div id="cde">
                 </div>

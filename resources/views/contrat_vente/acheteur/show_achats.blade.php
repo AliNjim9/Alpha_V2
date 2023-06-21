@@ -97,30 +97,157 @@
                 <div class="" style="height:30px;margin-top:2%;"></div>
             </div>
             <div class="right-div">          
-                <h1>Mes Contrats d'Achat Details</h1>
-                @if($contrats_ventes->count()>0 )
-                    @foreach($contrats_ventes as $index=>$contrat_vente)
-                    <ol>
-                        <li>Vendeur :  {{ $contrat_vente->vendeur->name }}</li>
-                        <li>Type vente :  {{ $contrat_vente->type_vente }}</li>
-                        <li>Date contrat :  {{ $contrat_vente->date_contrat }}</li>
-                        <li>Vente détails :</li>
-                        <ul>
-                            <li>Longeur: {{$vente_details[$index]->longeur}}</li>
-                            <li>Largeur: {{$vente_details[$index]->largeur}}</li>
-                            <li>Surface: {{$vente_details[$index]->surface}}</li>
-                            <li>Batis: {{$vente_details[$index]->bati==1?'Oui':'Non'}}</li>
-                            <li>A vendre : {{$vente_details[$index]->a_vendre==1?'Oui':'Non'}}</li>
-                        </ul>  
-                    </ol>
-                    @endforeach
+                <h1>Mes Contrats Achats Details</h1>
+                <div id="cde">
+                </div>
+                <select id="sort-select">
+                    <option value="all">All</option>
+                    <option value="terrain">Terrain</option>
+                    <option value="residence">Residence</option>
+                    <option value="appartement">Appartement</option>
+                </select>
+                @if($contrats_ventes->count()>0)
+                    <div id="contrats-container">
+                        @foreach($contrats_ventes as $contrat_vente)
+                        <ol>
+                            <li>Acheteur :  {{ $contrat_vente->acheteur->name }}</li>
+                            <li>Vendeur :  {{ $contrat_vente->vendeur->name }}</li>
+                            <li>Type vente :  {{ $contrat_vente->type_vente }}</li>
+                            <li>Date contrat :  {{ $contrat_vente->date_contrat }}</li>
+                            <li>Vente détails :</li>
+                            <ul>
+                            @switch($contrat_vente->type_vente)
+                                @case('terrain')
+                                    <li>Longeur: {{$contrat_vente->terrain_info->longeur}}</li>
+                                    <li>Largeur: {{$contrat_vente->terrain_info->largeur}}</li>
+                                    <li>Surface: {{$contrat_vente->terrain_info->surface}}</li>
+                                    <li>Bati: {{$contrat_vente->terrain_info->bati==1?'Oui':'Non'}}</li>
+                                    <li>A vendre : {{$contrat_vente->terrain_info->a_vendre==1?'Oui':'Non'}}</li>
+                                    @break
+
+                                @case('residence')
+                                    <li>Longeur: {{$contrat_vente->residence_info->longeur}}</li>
+                                    <li>Largeur: {{$contrat_vente->residence_info->largeur}}</li>
+                                    <li>Surface: {{$contrat_vente->residence_info->surface}}</li>
+                                    <li>Bati: {{$contrat_vente->residence_info->bati==1?'Oui':'Non'}}</li>
+                                    <li>A vendre : {{$contrat_vente->residence_info->a_vendre==1?'Oui':'Non'}}</li>
+                                    @break
+
+                                @case('appartement')
+                                    <li>Longeur: {{$contrat_vente->appartement_info->longeur}}</li>
+                                    <li>Largeur: {{$contrat_vente->appartement_info->largeur}}</li>
+                                    <li>Surface: {{$contrat_vente->appartement_info->surface}}</li>
+                                    <li>Bati: {{$contrat_vente->appartement_info->bati==1?'Oui':'Non'}}</li>
+                                    <li>A vendre : {{$contrat_vente->appartement_info->a_vendre==1?'Oui':'Non'}}</li>
+                                    @break
+                                @default
+                                    <p>No option is selected</p>
+                            @endswitch
+                            </ul>  
+                        </ol>
+                        <hr style="border : 1px solid red"></hr>
+                        @endforeach
+                    </div>
                 @else
-                <p>Vous ne disposer aucun contrats d'achat</p>
-                @endif  
+                    <p>Vous ne disposez aucun contrats d'achat</p>
+                @endif
             </div>
         </div>
-        <script src="{{ asset('js/section.js') }}"></script>
         <script src="{{ asset('js/navbar.js') }}"></script>
-        <script src="{{ asset('js/swiper.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                // Initial data
+                var contrats = @json($contrats_ventes);
+                $('#contrats-container').empty();
+                // Function to generate the ordered list for a user
+                function generateOrderedList(data) {
+                    var orderedList = $('<ol></ol>');
+
+                    var listItem1 = $('<li></li>').text('Acheteur: ' + data.acheteur.name);
+                    var listItem2 = $('<li></li>').text('Vendeur: ' + data.vendeur.name);
+                    var listItem3 = $('<li></li>').text('Type vente: ' + data.type_vente);
+                    var listItem4 = $('<li></li>').text('Date Contrat: ' + data.date_contrat);
+                    var listItem5 = $('<li></li>').text('Vente détails: ');
+                    var unorderedList = $('<ul></ul>');
+                    var value = data.type_vente; // Example value
+    
+                    switch (value) {
+                        case 'terrain':
+                            var ulistItem1 = $('<li></li>').text('Longeur: ' + data.terrain_info.longeur);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.terrain_info.longeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.terrain_info.longeur);
+                            var ulistItem4 = $('<li></li>').text('Bati: ' + (data.terrain_info.bati==1?'Oui':'Non'));
+                            var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.terrain_info.a_vendre==1?'Oui':'Non'));
+                            break;
+                        
+                        case 'residence':
+                            var ulistItem1 = $('<li></li>').text('Longeur: ' + data.residence_info.longeur);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.residence_info.longeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.residence_info.longeur);
+                            var ulistItem4 = $('<li></li>').text('Bati: ' + (data.residence_info.bati==1?'Oui':'Non'));
+                            var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.residence_info.a_vendre==1?'Oui':'Non'));
+                            break;
+                        
+                        case 'appartement':
+                            var ulistItem1 = $('<li></li>').text('Longeur: ' + data.appartement_info.longeur);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.appartement_info.longeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.appartement_info.longeur);
+                            var ulistItem4 = $('<li></li>').text('Bati: ' + (data.appartement_info.bati==1?'Oui':'Non'));
+                            var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.appartement_info.a_vendre==1?'Oui':'Non'));
+                            break;
+                        
+                        default:
+                            $('#result').text('No option is selected');
+                            break;
+                    }
+                    unorderedList.append(ulistItem1, ulistItem2, ulistItem3, ulistItem4,ulistItem5);
+                    orderedList.append(listItem1, listItem2, listItem3, listItem4,listItem5,unorderedList);
+
+                    return orderedList;
+                }
+
+                // Function to handle sorting based on the selected option
+                function sortDataByType(type) {
+                    var sortedContrats;
+
+                    if (type === 'all') {
+                        sortedContrats = contrats;
+                    } else {
+                        sortedContrats = contrats.filter(function(contrat) {
+                            return contrat.type_vente === type;
+                        });
+                    }
+
+                    // Clear the previous content and generate ordered lists for each user
+                    $('#contrats-container').empty();
+
+                    if(sortedContrats.length > 0) {
+                        sortedContrats.forEach(function(contrat) {
+                            var line=$('<hr style="border : 1px solid red"></hr>');
+                            $('#contrats-container').append(line);
+                            var orderedList = generateOrderedList(contrat);
+                            $('#contrats-container').append(orderedList);
+                        });
+                    }else
+                        $('#contrats-container').text('Vous ne disposez aucun contrats d\'achat.');
+                }
+
+                // Select button change event
+                $('#sort-select').change(function() {
+                    var selectedType = $(this).val();
+                    sortDataByType(selectedType);
+                });
+                if(contrats.length > 0) {
+                // Display the initial data in the container
+                contrats.forEach(function(contrat) {
+                        var line=$('<hr style="border : 1px solid red"></hr>');
+                        $('#contrats-container').append(line);
+                        var orderedList = generateOrderedList(contrat);
+                        $('#contrats-container').append(orderedList);
+                    });
+                }else
+                $('#contrats-container').text('Vous ne disposez aucun contrats d\'achat.');
+            });
+        </script>
     </body>
 </html>
