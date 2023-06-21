@@ -56,7 +56,7 @@ class AppartementController extends Controller
     }
     public function afficher_tout()
     {
-        $appartements = Appartement::get();
+        $appartements = Appartement::with('relatedUser')->get();
         return view('/appartement/show_all', compact('appartements'));
     }
     public function afficher_a_vendre()
