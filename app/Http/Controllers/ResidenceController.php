@@ -36,8 +36,8 @@ class ResidenceController extends Controller
         $residence->nombre_blocs = $request->input('nombre_blocs');
         $residence->nombre_appartements = $request->input('nombre_appartements');
         $residence->a_vendre=$request->input('a_vendre');
-        $residence->proprietaire=$userId;
         $residence->terrain_id=$request->input('terrain_id');// doit être envoyé directement depuis client side en relation du terrain correspondant 
+        $residence->proprietaire=$userId;
         //$residence->fiche_vente=$request->input('fiche_vente');
         $residence->save();
         $message='Residence crée avec succès';

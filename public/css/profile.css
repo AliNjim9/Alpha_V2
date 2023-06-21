@@ -1,6 +1,7 @@
 .divided-div{
     margin: 0;
     padding: 0;
+    padding-top:5%;
     gap: 30px;
     display: flex;
     width: 100%;
@@ -19,7 +20,7 @@
 .links-div{
     position: none;
 }
-.links-div-1{
+.links-div-1 , .links-div-1-1{
     border-bottom: 1px solid #e0e6ef;
     position: relative;
 }
@@ -38,4 +39,8 @@
 
 .collapse a{
     border-bottom: none;
+}
+.collapse{
+    left:4%;
+    position: relative;
 }

@@ -19,55 +19,77 @@
         <div class="container">
             @yield('content')
         </div>
-        <div class="" style="margin-top:7%;"></div>
         <div class="divided-div">
             <div class="left-div">
                 <div class="links-div">
                     <div class="titled-div">
-                        <h1>Outils</h1>
+                    <h1>Outils</h1>
                     </div>
                     <div class="links-div-1">
-                        <a href="#" data-toggle="collapse" data-target="#showSpending-1">Biens</a>
-                        <div class="collapse" id="showSpending-1">
+                    <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1">Mes Biens</a>
+                    <div class="collapse" id="showSpending-1">
+                        <div class="links-div-1-1">
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-1">Appartements</a>
+                        <div class="collapse" id="showSpending-1-1">
                             <div>
-                                <a href="#" >
-                                    Appartements
-                                </a>
+                            <a href="#">Disponibles</a>
                             </div>
                             <div>
-                                <a href="#" >
-                                    Résidences
-                                </a>
+                            <a href="#">Ventes</a>
                             </div>
                             <div>
-                                <a href="#" >
-                                    Terrains
-                                </a>
+                            <a href="#">Achats</a>
                             </div>
+                        </div>
+                        </div>
+                        <div class="links-div-1-1">
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-2">Residences</a>
+                        <div class="collapse" id="showSpending-1-2">
+                            <div>
+                            <a href="#">Disponibles</a>
+                            </div>
+                            <div>
+                            <a href="#">Ventes</a>
+                            </div>
+                            <div>
+                            <a href="#">Achats</a>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="links-div-1-1">
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-3">Terrains</a>
+                        <div class="collapse" id="showSpending-1-3">
+                            <div>
+                            <a href="#">Disponibles</a>
+                            </div>
+                            <div>
+                            <a href="#">Ventes</a>
+                            </div>
+                            <div>
+                            <a href="#">Achats</a>
+                            </div>
+                        </div>
                         </div>
                     </div>
+                    </div>
                     <div class="links-div-1">
-                        <a href="#" data-toggle="collapse" data-target="#showSpending-2">Contrats Ventes/Achats</a>
-                        <div class="collapse" id="showSpending-2">
-                            <div>
-                                <a href="{{ route('/contrat_vente/show_mes_contrats') }}" >
-                                    Mes ventes et achats
-                                </a>
-                            </div>
-                            <div>
-                                <a href="{{ route('/contrat_vente/vendeur/show_ventes') }}" >
-                                    Mes ventes
-                                </a>
-                            </div>
-                            <div>
-                                <a href="{{ route('/contrat_vente/acheteur/show_achats') }}" >
-                                    Mes achats
-                                </a>
-                            </div>
+                    <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-2">Contrats Ventes/Achats</a>
+                    <div class="collapse show" id="showSpending-2">
+                        <div class="links-div-1-1">
+                        <div>
+                            <a href="{{ route('/contrat_vente/show_mes_contrats') }}">Mes ventes et achats</a>
                         </div>
+                        <div>
+                            <a href="{{ route('/contrat_vente/vendeur/show_ventes') }}">Mes ventes</a>
+                        </div>
+                        <div>
+                            <a href="{{ route('/contrat_vente/acheteur/show_achats') }}">Mes achats</a>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                     <!--<div class="links-div-1">
-                        <a href="#" data-toggle="collapse" data-target="#showSpending-3">Contrats Location</a>
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-3">Contrats Location</a>
                         <div class="collapse" id="showSpending-3">
                             <div>
                                 <a href="#" >
@@ -87,14 +109,14 @@
                         </div>
                     </div>-->
                 </div>
-                <div class="" style="margin-top:2%;"></div>
+                <div class="" style="margin-top: 2%;"></div>
                 <!--<div class="forms-div">
-                    <form  method="POST" action="{{ route('/terrain/creation_terrain') }}">
-                        @csrf
-                        <button>cliquer ici</button>
-                    </form>
-                </div>-->
-                <div class="" style="height:30px;margin-top:2%;"></div>
+                        <form method="POST" action="{{ route('/terrain/creation_terrain') }}">
+                            @csrf
+                            <button>cliquer ici</button>
+                        </form>
+                    </div>-->
+                <div class="" style="height: 30px; margin-top: 2%;"></div>
             </div>
             <div class="right-div">          
                 <h1>Mes Contrats Achats Details</h1>
@@ -174,24 +196,24 @@
                     switch (value) {
                         case 'terrain':
                             var ulistItem1 = $('<li></li>').text('Longeur: ' + data.terrain_info.longeur);
-                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.terrain_info.longeur);
-                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.terrain_info.longeur);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.terrain_info.largeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.terrain_info.surface);
                             var ulistItem4 = $('<li></li>').text('Bati: ' + (data.terrain_info.bati==1?'Oui':'Non'));
                             var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.terrain_info.a_vendre==1?'Oui':'Non'));
                             break;
                         
                         case 'residence':
                             var ulistItem1 = $('<li></li>').text('Longeur: ' + data.residence_info.longeur);
-                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.residence_info.longeur);
-                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.residence_info.longeur);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.residence_info.largeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.residence_info.surface);
                             var ulistItem4 = $('<li></li>').text('Bati: ' + (data.residence_info.bati==1?'Oui':'Non'));
                             var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.residence_info.a_vendre==1?'Oui':'Non'));
                             break;
                         
                         case 'appartement':
                             var ulistItem1 = $('<li></li>').text('Longeur: ' + data.appartement_info.longeur);
-                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.appartement_info.longeur);
-                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.appartement_info.longeur);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.appartement_info.largeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.appartement_info.surface);
                             var ulistItem4 = $('<li></li>').text('Bati: ' + (data.appartement_info.bati==1?'Oui':'Non'));
                             var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.appartement_info.a_vendre==1?'Oui':'Non'));
                             break;
@@ -224,8 +246,8 @@
                     if(sortedContrats.length > 0) {
                         sortedContrats.forEach(function(contrat) {
                             var line=$('<hr style="border : 1px solid red"></hr>');
-                            $('#contrats-container').append(line);
                             var orderedList = generateOrderedList(contrat);
+                            $('#contrats-container').append(line);
                             $('#contrats-container').append(orderedList);
                         });
                     }else
@@ -241,8 +263,8 @@
                 // Display the initial data in the container
                 contrats.forEach(function(contrat) {
                         var line=$('<hr style="border : 1px solid red"></hr>');
-                        $('#contrats-container').append(line);
                         var orderedList = generateOrderedList(contrat);
+                        $('#contrats-container').append(line);
                         $('#contrats-container').append(orderedList);
                     });
                 }else

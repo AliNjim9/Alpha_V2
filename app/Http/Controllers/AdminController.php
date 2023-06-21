@@ -13,9 +13,16 @@ use Illuminate\Support\Facades\Crypt;
 
 class AdminController extends Controller
 {
-    public function getAllUsers(){
+    public function getAllUsers()
+    {
         $users = User::all()->where('is_admin',0);
         return view('/admin/all_users', compact('users'));
+    }
+    public function getAllTransactions(Request $request)
+    {
+        $transactions ="";
+        
+        return view('/admin/all_transactions', compact('transactions'));
     }
     public function updateUser(Request $request, $user_id)
     {
@@ -42,4 +49,5 @@ class AdminController extends Controller
             return redirect()->back()->with('success_delete', 'User deleted successfully');
         }
     }
+    
 }

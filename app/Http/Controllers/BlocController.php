@@ -20,27 +20,11 @@ class BlocController extends Controller
         $blocs = Bloc::get();
         return view('/bloc/show_all', compact('blocs'));     
     }
-    public function afficher_a_vendre()
-    {
-        
-    }
-    public function afficher_mes_blocs()
-    {
-        
-    }
-    public function afficher_mes_blocs_a_batir()
-    {
-        
-    }
     public function afficher_mes_blocs_batis()
     {
         
     }
     public function afficher_mes_blocs_non_batis()
-    {
-        
-    }
-    public function afficher_historique_des_ventes()
     {
         
     }

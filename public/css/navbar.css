@@ -10,7 +10,7 @@
     width: 100%;
     justify-content : center;
     background-color: #f8f9fa;
-    padding: 10px;
+    padding: 0px;
     opacity : 0.8;
     border-radius:10px;
 }
@@ -19,7 +19,7 @@
 }
 .navbar-brand {
     font-weight: bold;
-    width : 30px;
+    width : auto;
     margin-right: 5%;
 }
 
@@ -46,7 +46,7 @@
 }
 .nav-link{
     padding-left: 5px;
-    font-size: 1.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: #000000;
     display: 1 flex;
@@ -71,9 +71,9 @@
     transform: scaleX(1);
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: column!important;
         bottom: 0;
         left: 0;
         position: fixed;
@@ -81,9 +81,9 @@
     }
 
     .navbar-toggler {
-        display: block;
+        display: block!important;
         position: absolute;
-        top: 28px;
+        top: auto;
         right: 10px;
         background: none;
         border: none;

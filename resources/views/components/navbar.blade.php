@@ -1,4 +1,5 @@
-<nav class="navbar">
+<nav class="navbar navbar-expand-sm  gap-3">
+    <div class="container-fluid">
     <a class="navbar-brand" href="/">Logo</a>
     <button class="navbar-toggler">&#9776;</button>
     <ul class="navbar-nav">
@@ -44,4 +45,5 @@
     </ul>
     @include('components.cart-shopping')
     @yield('content')
+</div>
 </nav>

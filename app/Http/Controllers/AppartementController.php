@@ -50,9 +50,8 @@ class AppartementController extends Controller
     }
     public function obtenir_appartement_avec_id($id)
     {
-        $appartement=Appartement::find($id);
-        $user=$appartement->relatedUser;
-        return view('/appartement/show_by_id', compact('appartement','user'));
+        $appartement=Appartement::with('relatedUser')->find($id);
+        return view('/appartement/show_by_id', compact('appartement'));
     }
     public function afficher_tout()
     {

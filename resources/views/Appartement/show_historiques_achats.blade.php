@@ -1,5 +1,5 @@
 <h1>Details Historique des achats des appartements</h1>
-@if($ventes->count()>0 )
+@if($ventes->count()>0)
     <ul>
         @foreach($ventes as $vente)
             <li>{{ $vente->id }}</li>
