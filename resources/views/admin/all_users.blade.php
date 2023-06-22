@@ -60,7 +60,7 @@
     <hr style="border: 1px dashed #8e5c6a;">
     
     <div>
-        <a href="{{ route('/home') }}" >Dashboard  </a>  >  <a href="{{ route('/admin/espace_admin')}}" >  Admin Profile  </a>  >  <span >  Détails Utilisateurs</span>
+        <a href="{{ route('/home') }}" >Dashboard  </a>  >  <a href="{{ route('/admin/espace_admin')}}" >  Admin Profile  </a>  >  <span style='text-decoration:underline'>  Détails Utilisateurs</span>
     </div>
     <br>
     @if(session('fail'))

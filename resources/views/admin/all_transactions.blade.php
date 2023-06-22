@@ -27,7 +27,7 @@
     </div>
     <hr style="border: 1px dashed #8e5c6a;">
     <div>
-        <a href="{{ route('/home') }}" >Dashboard  </a>  >  <a href="{{ route('/admin/espace_admin')}}" >  Admin Profile  </a>  >  <span >  Users Transactions</span>
+        <a href="{{ route('/home') }}" >Dashboard  </a>  >  <a href="{{ route('/admin/espace_admin')}}" >  Admin Profile  </a>  >  <span style='text-decoration:underline'>  Users Transactions</span>
     </div>
     <br>
     

@@ -23,11 +23,11 @@
 </head>
 <body calss="antialiased">
     <div>
-    <h1>Admin Pannel</h1>
+        <h1>Admin Pannel</h1>
     </div>
     <hr style="border: 1px dashed #8e5c6a;">
     <div>
-        <a href="{{ route('/home') }}" >Dashboard</a>  >  <span >Admin Profile</span>
+        <a href="{{ route('/home') }}" >Dashboard</a>  >  <span style='text-decoration:underline'>Admin Profile</span>
     </div>
     <br>
     <div>
