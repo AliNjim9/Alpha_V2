@@ -28,97 +28,126 @@
         </div>
         <hr style="border: 1px dashed #8e5c6a;">
         <div style="text-align: center;">
-            <a href="{{ route('/home') }}" >Dashboard</a>  >  <a href="{{route('/user/espace_user')}}" >User Profile</a>  >  <span style='text-decoration:underline'>Mes Ventes<span>
+            <a href="{{ route('/home') }}" >Dashboard</a>  >  <a href="{{route('/user/espace_user')}}" >User Profile</a>  >  <span style='text-decoration:underline'>Mes Ventes/Achats<span>
         </div>
         <div class="divided-div">
             <div class="left-div">
                 <div class="links-div">
                     <div class="titled-div">
-                    <h1>Outils</h1>
+                        <h1>Outils</h1>
                     </div>
                     <div class="links-div-1">
-                    <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1">Mes Biens</a>
-                    <div class="collapse" id="showSpending-1">
-                        <div class="links-div-1-1">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-1">• Appartements</a>
-                        <div class="collapse" id="showSpending-1-1">
-                            <div>
-                                <a href="#">‣ Disponibles</a>
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1">Mes Biens</a>
+                        <div class="collapse" id="showSpending-1">
+                            <div class="links-div-1-1">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-1">• Appartements</a>
+                                <div class="collapse" id="showSpending-1-1">
+                                    <div>
+                                        <a href="#">‣ Disponibles</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Bati</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Non bati</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <a href="#">‣ Bati</a>
+                            <div class="links-div-1-1">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-2">• Residences</a>
+                                <div class="collapse" id="showSpending-1-2">
+                                    <div>
+                                        <a href="#">‣ Disponibles</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Bati</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Non bati</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <a href="#">‣ Non bati</a>
+                            <div class="links-div-1-1">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-3">• Terrains</a>
+                                <div class="collapse" id="showSpending-1-3">
+                                    <div>
+                                        <a href="#">‣ Disponibles</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Bati</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Non bati</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                        <div class="links-div-1-1">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-2">• Residences</a>
-                        <div class="collapse" id="showSpending-1-2">
-                            <div>
-                                <a href="#">‣ Disponibles</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Bati</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Non bati</a>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="links-div-1-1">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-3">• Terrains</a>
-                        <div class="collapse" id="showSpending-1-3">
-                            <div>
-                                <a href="#">‣ Disponibles</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Bati</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Non bati</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                     <div class="links-div-2">
-                    <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-2">Contrats Ventes/Achats</a>
-                    <div class="collapse show" id="showSpending-2">
-                        <div class="links-div-1-2">
-                        <div>
-                            <a href="{{ route('/contrat_vente/show_mes_contrats') }}">‣ Mes ventes et achats</a>
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-2">Contrats Ventes/Achats</a>
+                        <div class="collapse show" id="showSpending-2">
+                            <div class="links-div-1-2">
+                                <div>
+                                    <a href="{{ route('/contrat_vente/show_mes_contrats') }}">‣ Mes ventes et achats</a>
+                                </div>
+                                <div>
+                                    <a href="{{ route('/contrat_vente/vendeur/show_ventes') }}">‣ Mes ventes</a>
+                                </div>
+                                <div>
+                                    <a href="{{ route('/contrat_vente/acheteur/show_achats') }}">‣ Mes achats</a>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <a href="{{ route('/contrat_vente/vendeur/show_ventes') }}">‣ Mes ventes</a>
-                        </div>
-                        <div>
-                            <a href="{{ route('/contrat_vente/acheteur/show_achats') }}">‣ Mes achats</a>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 <div class="" style="margin-top: 2%;"></div>
-                <!--<div class="forms-div">
-                        <form method="POST" action="{{ route('/terrain/creation_terrain') }}">
-                            @csrf
-                            <button>cliquer ici</button>
-                        </form>
-                    </div>-->
+                <div class="" style="height: 30px; margin-top: 2%;"></div>
+                <!-- Button trigger modal -->
+                <div style="text-align:center;">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Lancez Infos
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Scrollable modal -->
+                </div>
                 <div class="" style="height: 30px; margin-top: 2%;"></div>
             </div>
-            <div class="right-div">          
-                <h1>Mes Contrats Vente Details</h1>
-                <div id="cde">
+            <div class="right-div">
+                <h1>Mes Contrats Vente/Achats Details</h1>
+                <div id="cde" style="display:inline;">
+                    <select id="sort-select-categorie" style="float:right;margin:0 1% 0 1%">
+                        <option value="all">All</option>
+                        <option value="Terrain">Terrain</option>
+                        <option value="Residence">Residence</option>
+                        <option value="Appartement">Appartement</option>
+                    </select>
+                    <h7 style="float:right">Catégorie</h7>
+                    <select id="sort-select" style="float:right;margin:0 1% 0 1%">
+                        <option value="all">All</option>
+                        <option value="Terrain">Terrain</option>
+                        <option value="Residence">Residence</option>
+                        <option value="Appartement">Appartement</option>
+                    </select>
+                    <h7 style="float:right">Surface</h7>
                 </div>
-                <select id="sort-select">
-                    <option value="all">All</option>
-                    <option value="terrain">Terrain</option>
-                    <option value="residence">Residence</option>
-                    <option value="appartement">Appartement</option>
-                </select>
                 @if($contrats_ventes->count()>0)
                     <div id="contrats-container" class="row row-cols-2 row-cols-md-4 g-4">
                         @foreach($contrats_ventes as $contrat_vente)
@@ -162,7 +191,8 @@
                         @endforeach
                     </div>
                 @else
-                    <p>Vous ne disposez aucun contrats de vente</p>
+                <br>
+                    <h3>Vous ne disposez aucun contrat de vente.</h3>
                 @endif  
             </div>
         </div>
@@ -254,11 +284,11 @@
                             $('#contrats-container').append(ready_card);
                         });
                     }else
-                        $('#contrats-container').text('Vous ne disposez aucun contrats de vente.');
+                        $('#contrats-container').text('Vous ne disposez aucun contrats de vente des '+ type +'s .');
                 }
 
                 // Select button change event
-                $('#sort-select').change(function() {
+                $('#sort-select-categorie').change(function() {
                     var selectedType = $(this).val();
                     sortDataByType(selectedType);
                 });
@@ -270,7 +300,7 @@
                         $('#contrats-container').append(ready_card);
                     });
                 }else
-                $('#contrats-container').text('Vous ne disposez aucun contrats de vente.');
+                $('#contrats-container').text('Vous ne disposez aucun contrats de vente des '+ selectedType +'s .');
             });
         </script>
     </body>
