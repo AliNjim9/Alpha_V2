@@ -37,67 +37,67 @@
                     <h1>Outils</h1>
                     </div>
                     <div class="links-div-1">
-                    <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1">Mes Biens</a>
-                    <div class="collapse" id="showSpending-1">
-                        <div class="links-div-1-1">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-1">• Appartements</a>
-                        <div class="collapse" id="showSpending-1-1">
-                            <div>
-                                <a href="#">‣ Disponibles</a>
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1">Mes Biens</a>
+                        <div class="collapse" id="showSpending-1">
+                            <div class="links-div-1-1">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-1">• Appartements</a>
+                                <div class="collapse" id="showSpending-1-1">
+                                    <div>
+                                        <a href="#">‣ Disponibles</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Bati</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Non Bati</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <a href="#">‣ Ventes</a>
+                            <div class="links-div-1-1">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-2">• Residences</a>
+                                <div class="collapse" id="showSpending-1-2">
+                                    <div>
+                                        <a href="#">‣ Disponibles</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Bati</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Non bati</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <a href="#">‣ Achats</a>
+                            <div class="links-div-1-1">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-3">• Terrains</a>
+                                <div class="collapse" id="showSpending-1-3">
+                                    <div>
+                                        <a href="#">‣ Disponibles</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Bati</a>
+                                    </div>
+                                    <div>
+                                        <a href="#">‣ Non bati</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                        <div class="links-div-1-1">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-2">• Residences</a>
-                        <div class="collapse" id="showSpending-1-2">
-                            <div>
-                                <a href="#">‣ Disponibles</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Ventes</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Achats</a>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="links-div-1-1">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-1-3">• Terrains</a>
-                        <div class="collapse" id="showSpending-1-3">
-                            <div>
-                                <a href="#">‣ Disponibles</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Ventes</a>
-                            </div>
-                            <div>
-                                <a href="#">‣ Achats</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                     <div class="links-div-2">
-                    <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-2">Contrats Ventes/Achats</a>
-                    <div class="collapse" id="showSpending-2">
-                        <div class="links-div-1-2">
-                        <div>
-                            <a href="{{ route('/contrat_vente/show_mes_contrats') }}">‣ Mes ventes et achats</a>
+                        <a href="#" data-bs-toggle="collapse" data-bs-target="#showSpending-2">Contrats Ventes/Achats</a>
+                        <div class="collapse" id="showSpending-2">
+                            <div class="links-div-1-2">
+                            <div>
+                                <a href="{{ route('/contrat_vente/show_mes_contrats') }}">‣ Mes ventes et achats</a>
+                            </div>
+                            <div>
+                                <a href="{{ route('/contrat_vente/vendeur/show_ventes') }}">‣ Mes ventes</a>
+                            </div>
+                            <div>
+                                <a href="{{ route('/contrat_vente/acheteur/show_achats') }}">‣ Mes achats</a>
+                            </div>
+                            </div>
                         </div>
-                        <div>
-                            <a href="{{ route('/contrat_vente/vendeur/show_ventes') }}">‣ Mes ventes</a>
-                        </div>
-                        <div>
-                            <a href="{{ route('/contrat_vente/acheteur/show_achats') }}">‣ Mes achats</a>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 <div class="" style="margin-top: 2%;"></div>

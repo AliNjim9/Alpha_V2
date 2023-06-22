@@ -46,10 +46,10 @@
                                 <a href="#">‣ Disponibles</a>
                             </div>
                             <div>
-                                <a href="#">‣ Ventes</a>
+                                <a href="#">‣ Bati</a>
                             </div>
                             <div>
-                                <a href="#">‣ Achats</a>
+                                <a href="#">‣ Non bati</a>
                             </div>
                         </div>
                         </div>
@@ -60,10 +60,10 @@
                                 <a href="#">‣ Disponibles</a>
                             </div>
                             <div>
-                                <a href="#">‣ Ventes</a>
+                                <a href="#">‣ Bati</a>
                             </div>
                             <div>
-                                <a href="#">‣ Achats</a>
+                                <a href="#">‣ Non bati</a>
                             </div>
                         </div>
                         </div>
@@ -74,10 +74,10 @@
                                 <a href="#">‣ Disponibles</a>
                             </div>
                             <div>
-                                <a href="#">‣ Ventes</a>
+                                <a href="#">‣ Bati</a>
                             </div>
                             <div>
-                                <a href="#">‣ Achats</a>
+                                <a href="#">‣ Non bati</a>
                             </div>
                         </div>
                         </div>
