@@ -151,7 +151,7 @@
                     <h7 style="float:right">Surface</h7>
                 </div>
                 @if($contrats_ventes->count()>0)
-                    <div id="contrats-container" class="row row-cols-2 row-cols-md-4 g-4">
+                    <div id="contrats-container" class="row row-cols-2 row-cols-md-4 g-4" style="margin:1%;">
                         @foreach($contrats_ventes as $contrat_vente)
                         <ol>
                             <li>Acheteur :  {{ $contrat_vente->acheteur->name }}</li>
