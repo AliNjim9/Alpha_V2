@@ -124,12 +124,12 @@
                 </div>
                 <select id="sort-select">
                     <option value="all">All</option>
-                    <option value="terrain">Terrain</option>
-                    <option value="residence">Residence</option>
-                    <option value="appartement">Appartement</option>
+                    <option value="Terrain">Terrain</option>
+                    <option value="Residence">Residence</option>
+                    <option value="Appartement">Appartement</option>
                 </select>
                 @if($contrats_ventes->count()>0)
-                    <div id="contrats-container">
+                    <div id="contrats-container" class="row row-cols-2 row-cols-md-4 g-4">
                         @foreach($contrats_ventes as $contrat_vente)
                         <ol>
                             <li>Acheteur :  {{ $contrat_vente->acheteur->name }}</li>
@@ -139,7 +139,7 @@
                             <li>Vente détails :</li>
                             <ul>
                             @switch($contrat_vente->type_vente)
-                                @case('terrain')
+                                @case('Terrain')
                                     <li>Longeur: {{$contrat_vente->terrain_info->longeur}}</li>
                                     <li>Largeur: {{$contrat_vente->terrain_info->largeur}}</li>
                                     <li>Surface: {{$contrat_vente->terrain_info->surface}}</li>
@@ -147,7 +147,7 @@
                                     <li>A vendre : {{$contrat_vente->terrain_info->a_vendre==1?'Oui':'Non'}}</li>
                                     @break
 
-                                @case('residence')
+                                @case('Residence')
                                     <li>Longeur: {{$contrat_vente->residence_info->longeur}}</li>
                                     <li>Largeur: {{$contrat_vente->residence_info->largeur}}</li>
                                     <li>Surface: {{$contrat_vente->residence_info->surface}}</li>
@@ -155,7 +155,7 @@
                                     <li>A vendre : {{$contrat_vente->residence_info->a_vendre==1?'Oui':'Non'}}</li>
                                     @break
 
-                                @case('appartement')
+                                @case('Appartement')
                                     <li>Longeur: {{$contrat_vente->appartement_info->longeur}}</li>
                                     <li>Largeur: {{$contrat_vente->appartement_info->largeur}}</li>
                                     <li>Surface: {{$contrat_vente->appartement_info->surface}}</li>
@@ -183,37 +183,46 @@
                 $('#contrats-container').empty();
                 // Function to generate the ordered list for a user
                 function generateOrderedList(data) {
+                    var col=$('<div class="col"></div>');
+                    var card=$('<div class="card h-100 border-3"></div>');
+                    var img=$('<img src="..." class="card-img-top alt="...">');
+                    var card_body=$('<div class="card-body"></div>');
+                    var info=$('<a href="#" class="btn btn-primary"></a>').text('Ouvrir');
+                    var title=$('<h5 class="card-title"></h5>').text(data.type_vente);
+                    var text=$('<div class="card-text"></div>');
+                    var card_footer=$('<div class="card-footer"></div>');
+                    var text_f=$('<small class="text-muted"></small>').text("Date Contrat : "+data.date_contrat);
+                    card_footer.append(text_f);
                     var orderedList = $('<ol></ol>');
 
                     var listItem1 = $('<li></li>').text('Acheteur: ' + data.acheteur.name);
                     var listItem2 = $('<li></li>').text('Vendeur: ' + data.vendeur.name);
-                    var listItem3 = $('<li></li>').text('Type vente: ' + data.type_vente);
-                    var listItem4 = $('<li></li>').text('Date Contrat: ' + data.date_contrat);
-                    var listItem5 = $('<li></li>').text('Vente détails: ');
+                    var listItem3 = $('<li></li>').text('Date Contrat: ' + data.date_contrat);
+                    var listItem4 = $('<li></li>').text('Vente détails: ');
                     var unorderedList = $('<ul></ul>');
                     var value = data.type_vente; // Example value
     
                     switch (value) {
-                        case 'terrain':
+                        case 'Terrain':
                             var ulistItem1 = $('<li></li>').text('Longeur: ' + data.terrain_info.longeur);
-                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.terrain_info.largeur);
-                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.terrain_info.surface);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.terrain_info.longeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.terrain_info.longeur);
                             var ulistItem4 = $('<li></li>').text('Bati: ' + (data.terrain_info.bati==1?'Oui':'Non'));
                             var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.terrain_info.a_vendre==1?'Oui':'Non'));
                             break;
                         
-                        case 'residence':
+                        case 'Residence':
                             var ulistItem1 = $('<li></li>').text('Longeur: ' + data.residence_info.longeur);
-                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.residence_info.largeur);
-                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.residence_info.surface);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.residence_info.longeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.residence_info.longeur);
                             var ulistItem4 = $('<li></li>').text('Bati: ' + (data.residence_info.bati==1?'Oui':'Non'));
                             var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.residence_info.a_vendre==1?'Oui':'Non'));
                             break;
                         
-                        case 'appartement':
+                        case 'Appartement':
                             var ulistItem1 = $('<li></li>').text('Longeur: ' + data.appartement_info.longeur);
-                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.appartement_info.largeur);
-                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.appartement_info.surface);
+                            var ulistItem2 = $('<li></li>').text('Largeur: ' + data.appartement_info.longeur);
+                            var ulistItem3 = $('<li></li>').text('Surface: ' + data.appartement_info.longeur);
                             var ulistItem4 = $('<li></li>').text('Bati: ' + (data.appartement_info.bati==1?'Oui':'Non'));
                             var ulistItem5 = $('<li></li>').text('A vendre: ' + (data.appartement_info.a_vendre==1?'Oui':'Non'));
                             break;
@@ -223,9 +232,12 @@
                             break;
                     }
                     unorderedList.append(ulistItem1, ulistItem2, ulistItem3, ulistItem4,ulistItem5);
-                    orderedList.append(listItem1, listItem2, listItem3, listItem4,listItem5,unorderedList);
-
-                    return orderedList;
+                    orderedList.append(listItem1, listItem2, listItem4,unorderedList);
+                    text.append(orderedList);
+                    card_body.append(title,text,info);
+                    card.append(img,card_body,card_footer);
+                    col.append(card);
+                    return col;
                 }
 
                 // Function to handle sorting based on the selected option
@@ -246,12 +258,12 @@
                     if(sortedContrats.length > 0) {
                         sortedContrats.forEach(function(contrat) {
                             var line=$('<hr style="border : 1px solid red"></hr>');
-                            var orderedList = generateOrderedList(contrat);
-                            $('#contrats-container').append(line);
-                            $('#contrats-container').append(orderedList);
+                            var ready_card = generateOrderedList(contrat);
+                            
+                            $('#contrats-container').append(ready_card);
                         });
                     }else
-                        $('#contrats-container').text('Vous ne disposez aucun contrats d\'achat.');
+                        $('#contrats-container').text('Vous ne disposez aucun contrats de vente.');
                 }
 
                 // Select button change event
@@ -263,12 +275,11 @@
                 // Display the initial data in the container
                 contrats.forEach(function(contrat) {
                         var line=$('<hr style="border : 1px solid red"></hr>');
-                        var orderedList = generateOrderedList(contrat);
-                        $('#contrats-container').append(line);
-                        $('#contrats-container').append(orderedList);
+                        var ready_card = generateOrderedList(contrat);
+                        $('#contrats-container').append(ready_card);
                     });
                 }else
-                $('#contrats-container').text('Vous ne disposez aucun contrats d\'achat.');
+                $('#contrats-container').text('Vous ne disposez aucun contrats de vente.');
             });
         </script>
     </body>

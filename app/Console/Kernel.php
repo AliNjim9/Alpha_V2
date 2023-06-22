@@ -2,7 +2,6 @@
 
 namespace App\Console;
 
-use App\Models\Contrat_location;
 use Carbon\Carbon;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -15,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
-    protected function schedule(Schedule $schedule)
+    /*protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
         $schedule->call(function () {
@@ -23,7 +22,7 @@ class Kernel extends ConsoleKernel
                 'etat' => 'termine',
             ]);
         })->daily();
-    }
+    }*/
 
     /**
      * Register the commands for the application.

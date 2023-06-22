@@ -90,15 +90,15 @@ class Contrat_venteController extends Controller
         $vente_details= array();
         foreach($contrats_ventes as $contrat_vente){
             switch($contrat_vente->type_vente){
-                case("terrain"):
+                case("Terrain"):
                     $details=Terrain::findOrFail($contrat_vente->vente_id_terrain);
                     array_push($vente_details,$details);
                     break;
-                case("residence"):
+                case("Residence"):
                     $details=Residence::findOrFail($contrat_vente->vente_id_residence);
                     array_push($vente_details,$details);
                     break;
-                case("appartement"):
+                case("Appartement"):
                     $details=Appartement::findOrFail($contrat_vente->vente_id_appartement);
                     array_push($vente_details,$details);
                     break;
@@ -116,15 +116,15 @@ class Contrat_venteController extends Controller
         $vente_details= array();
         foreach($contrats_ventes as $contrat_vente){
             switch($contrat_vente->type_vente){
-                case("terrain"):
+                case("Terrain"):
                     $details=Terrain::findOrFail($contrat_vente->vente_id_terrain);
                     array_push($vente_details,$details);
                     break;
-                case("residence"):
+                case("Residence"):
                     $details=Residence::findOrFail($contrat_vente->vente_id_residence);
                     array_push($vente_details,$details);
                     break;
-                case("appartement"):
+                case("Appartement"):
                     $details=Appartement::findOrFail($contrat_vente->vente_id_appartement);
                     array_push($vente_details,$details);
                     break;

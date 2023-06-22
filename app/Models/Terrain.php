@@ -26,7 +26,7 @@ class Terrain extends Model
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->id = (string) Str::uuid()."-terrain";
+            $model->id = (string) Str::uuid()."-Terrain";
         });
     }
     public function relatedUser()

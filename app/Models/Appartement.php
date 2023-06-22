@@ -16,7 +16,7 @@ class Appartement extends Model
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->id = (string) Str::uuid()."-appartement";
+            $model->id = (string) Str::uuid()."-Appartement";
         });
     }
     protected $fillable = [

@@ -21,7 +21,7 @@ class CreateContratsVenteTable extends Migration
             $table->string('vente_id_terrain')->nullable(true);
             $table->string('vente_id_residence')->nullable(true);
             $table->string('vente_id_appartement')->nullable(true);
-            $table->enum('type_vente',['terrain','residence','apaprtement']);
+            $table->enum('type_vente',['Terrain','Residence','Appartement']);
             
             $table->foreign('acheteur_id')->references('id')->on('users');
             $table->foreign('vendeur_id')->references('id')->on('users');
@@ -32,18 +32,18 @@ class CreateContratsVenteTable extends Migration
             $table->timestamps();
             
         });
-        DB::statement('ALTER TABLE contrat_ventes ADD CONSTRAINT type_vente_constraint CHECK (type_vente IN (\'terrain\', \'residence\', \'apaprtement\'))');
+        DB::statement('ALTER TABLE contrat_ventes ADD CONSTRAINT type_vente_constraint CHECK (type_vente IN (\'Terrain\', \'Residence\', \'Appartement\'))');
         DB::statement('ALTER TABLE contrat_ventes ADD CONSTRAINT fk_not_null_constraint CHECK (
             (
-                type_vente = \'terrain\' AND vente_id_terrain IS NOT NULL AND vente_id_residence IS NULL AND vente_id_appartement IS NULL
+                type_vente = \'Terrain\' AND vente_id_terrain IS NOT NULL AND vente_id_residence IS NULL AND vente_id_appartement IS NULL
             )
             OR
             (
-                type_vente = \'residence\' AND vente_id_terrain IS NULL AND vente_id_residence IS NOT NULL AND vente_id_appartement IS NULL
+                type_vente = \'Residence\' AND vente_id_terrain IS NULL AND vente_id_residence IS NOT NULL AND vente_id_appartement IS NULL
             )
             OR
             (
-                type_vente = \'appartement\' AND vente_id_terrain IS NULL AND vente_id_residence IS NULL AND vente_id_appartement IS NOT NULL
+                type_vente = \'Appartement\' AND vente_id_terrain IS NULL AND vente_id_residence IS NULL AND vente_id_appartement IS NOT NULL
             )
         );'
         );

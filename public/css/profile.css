@@ -26,7 +26,7 @@
 }
 .links-div a{
     display: inline-block;
-    margin-left: 8%;
+    padding-left: 8%;
 }
 .titled-div{
     background-color: antiquewhite;
@@ -41,6 +41,6 @@
     border-bottom: none;
 }
 .collapse{
-    left:4%;
+    padding-left:4%;
     position: relative;
 }

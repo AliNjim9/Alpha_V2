@@ -29,7 +29,7 @@ class Residence extends Model
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->id = (string) Str::uuid()."-residence";
+            $model->id = (string) Str::uuid()."-Residence";
         });
     }
     public function relatedTerrain()
