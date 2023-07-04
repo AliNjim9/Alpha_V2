@@ -76,7 +76,6 @@
             {{ session('success_delete') }}
         </div>
     @endif
-        
         <table>
             <thead>
                 <tr>

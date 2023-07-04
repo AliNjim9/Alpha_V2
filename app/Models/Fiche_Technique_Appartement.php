@@ -14,4 +14,9 @@ class Fiche_Technique_Appartement extends Model
     protected $fillable = [
        
     ];
+    public function relatedAppartement()
+    {
+        return $this->belongsTo(Appartement::class,'appartement_id');
+    }
 }
+

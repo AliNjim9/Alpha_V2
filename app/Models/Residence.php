@@ -17,6 +17,7 @@ class Residence extends Model
         'largeur',
         'surface',
         'bati',
+        'nombre_etages',
         'nombre_blocs',
         'nombre_appartements',
         'a_vendre',

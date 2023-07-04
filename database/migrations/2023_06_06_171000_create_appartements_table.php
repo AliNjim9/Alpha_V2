@@ -27,7 +27,6 @@ class CreateAppartementsTable extends Migration
             $table->string('proprietaire');
             $table->string('fiche_vente')->nullable(true);
             $table->string('fiche_technique')->nullable(true);
-
             
             $table->foreign('bloc_id')->references('id')->on('blocs')->onDelete('cascade');
             $table->foreign('residence_id')->references('id')->on('residences')->onDelete('cascade');

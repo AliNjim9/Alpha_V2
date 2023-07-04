@@ -20,6 +20,7 @@ class CreateResidenceTable extends Migration
             $table->float('largeur');
             $table->float('surface');
             $table->boolean('bati');
+            $table->integer('nombre_etages')->nullable(true);
             $table->integer('nombre_blocs')->nullable(true);
             $table->integer('nombre_appartements')->nullable(true);
             $table->boolean('a_vendre');
